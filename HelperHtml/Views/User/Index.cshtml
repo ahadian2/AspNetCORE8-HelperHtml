@@ -1,0 +1,62 @@
+﻿@model HelperHtml.Models.Person
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <span>id</span>
+        <span>@Model.Id</span>
+    </div>
+    <div>
+        <span>Name</span>
+        <span>@Model.Name</span>
+    </div>
+    <div>
+        <span>Family</span>
+        <span>@Model.Family</span>
+    </div>
+    <div>
+        <span>Description</span>
+        <span>@Model.Description</span>
+    </div>
+    <div>
+        <span>Gender</span>
+        <span>@Model.Gender</span>
+    </div>
+
+
+
+    @Html.ActionLink("Home Page", "Index", "Home", new { Name = "Mohammadreza" }, new { style = "color:red;", @class = "test" })
+
+    <hr />
+    <hr />
+
+    @Html.DisplayNameFor(q => q.Name)
+    @Html.DisplayFor(q => q.Name)
+
+    <hr />
+    <hr />
+    <input type="text" value="@Model.Name" />
+    @Html.LabelFor(p=>p.Name)
+    @Html.TextBoxFor(p => p.Name, new { @class = "test" })
+
+    <hr />
+    <hr />
+    @Html.LabelFor(p => p.Gender)
+    @Html.CheckBoxFor(p=>p.Gender)
+
+    <hr />
+    <hr />
+    @Html.LabelFor(p => p.Description)
+    @Html.TextAreaFor(p => p.Description)
+
+</body>
+</html>
